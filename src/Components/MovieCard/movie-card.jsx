@@ -1,3 +1,3 @@
-export const MovieCard = () => {
-  return <div>some title</div>;
+export const MovieCard = ({ movie }) => {
+  return <div>{movie.title}</div>;
 };
