@@ -17,9 +17,9 @@ export const MainView = () => {
 
   return (
     <div>
-      {movies.map((movie) => {
-        return <div key={movie.id}>{movie.title}</div>;
-      })}
+      {movies.map((movie) => (
+        <MovieCard movieData={movie} />
+      ))}
     </div>
   );
 };
