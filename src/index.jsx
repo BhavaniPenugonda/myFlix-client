@@ -4,6 +4,7 @@ import { MainView } from './Components/main-view/main-view';
 
 // Import statement to indicate that you need to bundle `./index.scss`
 import "./index.scss";
+import React from 'react';
 const App = () => {
   return <MainView />;
  };
