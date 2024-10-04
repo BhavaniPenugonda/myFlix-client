@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 export const MainView = () => {
+
   return (
     <div>
       <div>Eloquent JavaScript</div>
