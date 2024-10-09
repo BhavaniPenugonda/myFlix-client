@@ -6,7 +6,7 @@ import {MovieView } from "../movie-view/movie-view";
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
 
-useEffect(() => {
+  useEffect(() => {
     fetch("https://flixmovies-1ddcfb2fa4c5.herokuapp.com/movies")
       .then((response) => response.json())
       .then((data) => {
