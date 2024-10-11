@@ -7,6 +7,7 @@ import { LoginView } from "../login-view/login-view";
 
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     fetch("https://flixmovies-1ddcfb2fa4c5.herokuapp.com/movies")
@@ -28,6 +29,10 @@ export const MainView = () => {
       });
   }, []);
   
+  if (!user) {
+    return <LoginView />;
+  }
+
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   if (selectedMovie) {
