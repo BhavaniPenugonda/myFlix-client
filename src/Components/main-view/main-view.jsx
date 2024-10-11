@@ -30,23 +30,50 @@ export const MainView = () => {
   }, []);
   
   if (!user) {
-    return <LoginView />;
+    return <LoginView onLoggedIn={(user) => setUser(user)}/>;
   }
 
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   if (selectedMovie) {
     return (
+      <>
+      <button
+        onClick={() => {
+          setUser(null);
+        }}
+      >
+        Logout
+      </button>
     <MovieView movie= {selectedMovie} onBackClick={() => setSelectedMovie(null)}/>
+      </>
     );
   }
 
   if (movies.length === 0) {
-    return <div>The list is empty!</div>;
+    return(
+      <>
+        <button
+          onClick={() => {
+            setUser(null);
+          }}
+        >
+          Logout
+        </button>
+     <div>The list is empty!</div>;
+     </>
+    );
   }
 
   return (
     <div>
+      <button
+        onClick={() => {
+          setUser(null);
+        }}
+      >
+        Logout
+      </button>
       {movies.map((movie) => (
         <MovieCard
           key={movie._id}
