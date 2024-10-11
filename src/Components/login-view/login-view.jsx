@@ -14,17 +14,25 @@ export const LoginView = ({ onLoggedIn }) => {
       secret: password,
     };
 
-    fetch("https://flixmovies-1ddcfb2fa4c5.herokuapp.com/login.json", {
+    fetch("https://flixmovies-1ddcfb2fa4c5.herokuapp.com/login", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(data),
-    }).then((response) => {
-      if (response.ok) {
-        onLoggedIn(username);
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Login response: ", data);
+      if (data.user) {
+        onLoggedIn(data.user, data.token);
       } else {
-        alert("Login failed");
+        alert("No such user");
       }
+    })
+    .catch((e) => {
+      alert("Something went wrong");
     });
-  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -44,4 +52,4 @@ export const LoginView = ({ onLoggedIn }) => {
     </form>
   );
 };
-
+};
