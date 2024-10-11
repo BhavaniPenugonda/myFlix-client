@@ -8,11 +8,18 @@ import { LoginView } from "../login-view/login-view";
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
   const [user, setUser] = useState(null);
+  const [token, setToken] = useState(null);
+
 
   useEffect(() => {
+    if (!token) {
+      return;
+    }
     fetch("https://flixmovies-1ddcfb2fa4c5.herokuapp.com/movies")
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
+      });
         const moviesFromApi = data.map((movie) => {
           return {
             _id: movie._id,
@@ -26,11 +33,18 @@ export const MainView = () => {
         });
 
         setMovies(moviesFromApi);
-      });
-  }, []);
+
+  }, [token]);
   
   if (!user) {
-    return <LoginView onLoggedIn={(user) => setUser(user)}/>;
+    return (
+    <LoginView onLoggedIn={(user,token) => {
+      setUser(user);
+      setToken(token);
+    
+    }}
+    />
+  );
   }
 
   const [selectedMovie, setSelectedMovie] = useState(null);
@@ -86,4 +100,4 @@ export const MainView = () => {
       ))}
     </div>
   );
-  };
+}
