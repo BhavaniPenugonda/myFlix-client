@@ -3,6 +3,7 @@ import { MovieCard } from "../movie-card/movie-card";
 import {MovieView } from "../movie-view/movie-view";
 /*import { movies} from "../movie-data/movie-data"; */
 import { LoginView } from "../login-view/login-view";
+import { SignupView } from "../signup-view/signup-view";
 
 
 export const MainView = () => {
