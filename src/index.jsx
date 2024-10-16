@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import { MainView } from './Components/main-view/main-view';
+import Container from 'react-bootstrap/Container';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -8,8 +9,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.scss";
 import React from 'react';
 const App = () => {
-  return <MainView />;
- };
+  return (
+    <Container>
+      <MainView />
+    </Container>
+  );
+}
  
 
 // Finds the root of your app
