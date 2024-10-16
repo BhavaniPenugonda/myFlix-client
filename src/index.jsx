@@ -10,11 +10,11 @@ import "./index.scss";
 import React from 'react';
 const App = () => {
   return (
-    <Container>
+    <Container style={{border: "1px solid red"}}>
       <MainView />
     </Container>
   );
-}
+};
  
 
 // Finds the root of your app
