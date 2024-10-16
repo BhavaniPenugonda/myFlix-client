@@ -4,6 +4,7 @@ import {MovieView } from "../movie-view/movie-view";
 /*import { movies} from "../movie-data/movie-data"; */
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
+import Row from "react-bootstrap/Row";
 
 
 export const MainView = () => {
@@ -13,6 +14,7 @@ export const MainView = () => {
   const [user, setUser] = useState(storedUser? storedUser : null);
   const [token, setToken] = useState(storedToken? storedToken : null);
   const [selectedMovie, setSelectedMovie] = useState(null);
+
 
 
   useEffect(() => {
@@ -41,7 +43,7 @@ export const MainView = () => {
         });
   }, [token]);
   
-  if (!user) {
+ /* if (!user) {
     return (
       <>
     <LoginView onLoggedIn={(user,token) => {
@@ -112,3 +114,36 @@ export const MainView = () => {
     </div>
   );
 }
+*/
+
+return (
+  <Row>
+    {!user ? (
+      <>
+        <LoginView onLoggedIn={(user) => setUser(user)} />
+        or
+        <SignupView />
+      </>
+    ) : selectedMovie ? (
+      <MovieView
+        movie={selectedMovie}
+        onBackClick={() => setSelectedMovie(null)}
+      />
+    ) : movies.length === 0 ? (
+      <div>The list is empty!</div>
+    ) : (
+      <>
+        {movies.map((movie) => (
+          <MovieCard
+            key={movie.id}
+            movie={movie}
+            onMovieClick={(newSelectedMovie) => {
+              setSelectedMovie(newSelectedMovie);
+            }}
+          />
+        ))}
+      </>
+    )}
+  </Row>
+);
+};
