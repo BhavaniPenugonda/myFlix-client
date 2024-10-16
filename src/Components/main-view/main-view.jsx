@@ -151,6 +151,8 @@ return (
         
       </>
     )}
+    <Col>
+    <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button></Col>
   </Row>
 );
 };
