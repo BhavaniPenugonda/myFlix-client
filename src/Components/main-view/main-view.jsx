@@ -138,14 +138,17 @@ return (
     ) : (
       <>
         {movies.map((movie) => (
-          <MovieCard
-            key={movie.id}
+          
+          <Col  key={movie.id} md= {3}>
+            <MovieCard
             movie={movie}
             onMovieClick={(newSelectedMovie) => {
               setSelectedMovie(newSelectedMovie);
             }}
           />
+          </Col>
         ))}
+        
       </>
     )}
   </Row>
