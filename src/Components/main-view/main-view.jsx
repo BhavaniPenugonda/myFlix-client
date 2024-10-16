@@ -12,6 +12,7 @@ export const MainView = () => {
   const [movies, setMovies] = useState([]);
   const [user, setUser] = useState(storedUser? storedUser : null);
   const [token, setToken] = useState(storedToken? storedToken : null);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
 
   useEffect(() => {
@@ -55,7 +56,7 @@ export const MainView = () => {
   );
   }
 
-  const [selectedMovie, setSelectedMovie] = useState(null);
+  
 
   if (selectedMovie) {
     return (
