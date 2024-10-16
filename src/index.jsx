@@ -10,7 +10,7 @@ import "./index.scss";
 import React from 'react';
 const App = () => {
   return (
-    <Container style={{border: "1px solid red"}}>
+    <Container style=  {{border: "1px solid red"}}>
       <MainView />
     </Container>
   );
