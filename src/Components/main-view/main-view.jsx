@@ -24,10 +24,9 @@ export const MainView = () => {
       })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-      });
-        const moviesFromApi = data.map((movie) => {
-          return {
+        
+        const moviesFromApi = data.map((movie) => ({
+    
             _id: movie._id,
             Title: movie.Title,
             Description: movie.Description,
@@ -35,11 +34,10 @@ export const MainView = () => {
             Director: movie.Director,
             ImagePath: movie.ImagePath,
             Featured: movie.Featured,
-          };
-        });
-
+          }));
+    
         setMovies(moviesFromApi);
-
+        });
   }, [token]);
   
   if (!user) {
