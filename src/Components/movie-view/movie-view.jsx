@@ -1,3 +1,7 @@
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { Button, Card } from "react-bootstrap";
+
 import "./movie-view.scss";
 
 export const MovieView = ({ movie,  onBackClick}) => {
