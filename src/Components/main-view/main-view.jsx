@@ -35,7 +35,9 @@ return (
   <NavigationBar
         user={user}
         onLoggedOut={() => {
-          setUser(null);
+          setUser(null),
+          setToken(null) ,
+          localStorage.clear();
         }}
       />
       <Row className="justify-content-md-center">
