@@ -35,8 +35,8 @@ return (
   <NavigationBar
         user={user}
         onLoggedOut={() => {
-          setUser(null),
-          setToken(null) ,
+          setUser(null);
+          setToken(null);
           localStorage.clear();
         }}
       />
