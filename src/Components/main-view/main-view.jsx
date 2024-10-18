@@ -29,18 +29,7 @@ export const MainView = () => {
       .then((response) => response.json())
       .then((data) => {
         
-        const moviesFromApi = data.map((movie) => ({
-    
-            _id: movie._id,
-            Title: movie.Title,
-            Description: movie.Description,
-            Genre: movie.Genre,
-            Director: movie.Director,
-            ImagePath: movie.ImagePath,
-            Featured: movie.Featured,
-          }));
-    
-        setMovies(moviesFromApi);
+        setMovies(data);
         });
   }, [token]);
   
