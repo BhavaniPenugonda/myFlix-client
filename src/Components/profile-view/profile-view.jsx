@@ -143,10 +143,10 @@ export const ProfileView = ({ token, setUser, movies }) => {
           </Form.Group>
 
           <Form.Group controlId="formBirthdate">
-            <Form.Label>Birthdate:</Form.Label>
+            <Form.Label>Birthday:</Form.Label>
             <Form.Control
               type="date"
-              value={birthdate}
+              value={birthday}
               onChange={(e) => setBirthday(e.target.value)}
               required
             />

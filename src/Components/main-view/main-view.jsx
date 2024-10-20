@@ -44,7 +44,7 @@ export const MainView = () => {
 
     try {
       const response = await fetch(
-        "https://flixmovies-1ddcfb2fa4c5.herokuapp.com/users/${user.Username}/movies/${movieId}",
+        `https://flixmovies-1ddcfb2fa4c5.herokuapp.com/users/${user.Username}/movies/${movieId}`,
         {
           method: method,
           headers: {
