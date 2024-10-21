@@ -40,7 +40,7 @@ export const MovieView = ({ movies }) => {
   const { movieId } = useParams();
 
   const movie = movies.find((m) => m._id === movieId);
-  console.log(movieId);
+  console.log(m);
   if (!movie) {
     return <div>Movie not found!</div>;
   }
