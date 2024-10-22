@@ -27573,14 +27573,14 @@ const MainView = ()=>{
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                                                 movie: movie,
                                                 onMovieClick: ()=>setSelectedMovie(movie),
-                                                onFavoriteToggle: ()=>toggleFavorite(movie._id),
+                                                onFavoriteToggle: ()=>toggleFavorite(movie.id),
                                                 isFavorite: isFavorite
                                             }, void 0, false, {
                                                 fileName: "src/Components/main-view/main-view.jsx",
                                                 lineNumber: 143,
                                                 columnNumber: 25
                                             }, void 0)
-                                        }, movie._id, false, {
+                                        }, movie.id, false, {
                                             fileName: "src/Components/main-view/main-view.jsx",
                                             lineNumber: 142,
                                             columnNumber: 23
@@ -27732,9 +27732,13 @@ MovieCard.propTypes = {
         Title: (0, _propTypesDefault.default).string,
         Description: (0, _propTypesDefault.default).string,
         Genre: (0, _propTypesDefault.default).string,
-        Director: (0, _propTypesDefault.default).string
+        Director: (0, _propTypesDefault.default).string,
+        ImagePath: (0, _propTypesDefault.default).string,
+        _id: (0, _propTypesDefault.default).string.isRequired
     }).isRequired,
-    onMovieClick: (0, _propTypesDefault.default).func.isRequired
+    onMovieClick: (0, _propTypesDefault.default).func.isRequired,
+    onFavoriteToggle: (0, _propTypesDefault.default).func.isRequired,
+    isFavorite: (0, _propTypesDefault.default).bool.isRequired
 };
 var _c;
 $RefreshReg$(_c, "MovieCard");

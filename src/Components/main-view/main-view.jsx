@@ -139,10 +139,10 @@ return (
                         movie._id
                       ); // Check if the movie is a favorite
                       return(
-                      <Col className="mb-4" key={movie._id} md={3}>
+                      <Col className="mb-4" key={movie.id} md={3}>
                         <MovieCard movie={movie}
                        onMovieClick={() => setSelectedMovie(movie)}
-                       onFavoriteToggle={() => toggleFavorite(movie._id)}
+                       onFavoriteToggle={() => toggleFavorite(movie.id)}
                        isFavorite={isFavorite}  />
                       </Col>
                       );
