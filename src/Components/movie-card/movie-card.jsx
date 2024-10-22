@@ -34,10 +34,14 @@ MovieCard.propTypes = {
     Title: PropTypes.string,
     Description:PropTypes.string,
     Genre:PropTypes.string,
-    Director:PropTypes.string
+    Director:PropTypes.string,
+    ImagePath: PropTypes.string,
+    _id: PropTypes.string.isRequired,
 
   }).isRequired,
   onMovieClick: PropTypes.func.isRequired,
+  onFavoriteToggle: PropTypes.func.isRequired, // New prop for favorite toggle
+  isFavorite: PropTypes.bool.isRequired,
 };
 
 
