@@ -9,17 +9,21 @@ import Col from 'react-bootstrap/Col';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
 import { ProfileView } from "../profile-view/profile-view";
+import { configureStore } from "@reduxjs/toolkit";
+import { useSelector, useDispatch } from "react-redux";
+import { setMovies } from "../../redux/reducers/movies";
 
 
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const storedToken = localStorage.getItem("token");
-  const [movies, setMovies] = useState([]);
+  /*const [movies, setMovies] = useState([]);*/
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [selectedMovie, setSelectedMovie] = useState(null);
-
+  const movies = useSelector((state) => state.movies);
+  const dispatch = useDispatch();
   
 
 
@@ -32,7 +36,7 @@ export const MainView = () => {
       .then((response) => response.json())
       .then((data) => {
         
-        setMovies(data);
+        dispatch(setMovies(data));
         });
   }, [token]);
   
