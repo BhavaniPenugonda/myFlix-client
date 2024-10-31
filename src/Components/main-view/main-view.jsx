@@ -76,12 +76,8 @@ export const MainView = () => {
 return (
   <BrowserRouter>
   <NavigationBar
-        user={user}
-        onLoggedOut={() => {
-          setUser(null);
-          setToken(null);
-          localStorage.clear();
-        }}
+        
+        
       />
       <Row className="justify-content-md-center">
         <Routes>
@@ -107,7 +103,7 @@ return (
                   <Navigate to="/" />
                 ) : (
                   <Col md={5}>
-                    <LoginView onLoggedIn={(user) => setUser(user)} />
+                    <LoginView  />
                   </Col>
                 )}
               </>
@@ -123,7 +119,7 @@ return (
                   <Col>The list is empty!</Col>
                 ) : (
                   <Col md={8}>
-                    <MovieView movies={movies} />
+                    <MovieView />
                   </Col>
                 )}
               </>
