@@ -2,11 +2,16 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { useDispatch } from "react-redux"; // Import useDispatch
+import { setUser } from "../../redux/reducers/user/user"; // Import setUser action
+
 
 export const LoginView = ({ onLoggedIn }) => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch(); // Define the dispatch function
+
 
   const handleSubmit = (event) => {
     // this prevents the default behavior of the form which is to reload the entire page
