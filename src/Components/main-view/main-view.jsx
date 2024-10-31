@@ -64,7 +64,7 @@ export const MainView = () => {
       }
 
       const updatedUser = await response.json();
-      setUser(updatedUser);
+      dispatch(setUser(updatedUser));
       localStorage.setItem("user", JSON.stringify(updatedUser));
     } catch (err) {
       console.error(err.message);
