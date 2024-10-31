@@ -8,7 +8,7 @@ initialState: {
 },
 reducers: {
 setMovies: (state, action) => {
-state.movies = action.payload
+state.list = action.payload
 },
 setFilter: (state, action) => {
   state.filter = action.payload;
