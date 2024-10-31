@@ -22,7 +22,7 @@ export const MainView = () => {
   /*const [user, setUser] = useState(null);*/
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [selectedMovie, setSelectedMovie] = useState(null);
-  const movies = useSelector((state) => state.movies);
+  const movies = useSelector((state) => state.movies.list);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   
