@@ -12,6 +12,7 @@ import { ProfileView } from "../profile-view/profile-view";
 import { configureStore } from "@reduxjs/toolkit";
 import { useSelector, useDispatch } from "react-redux";
 import { setMovies } from "../../redux/reducers/movies";
+import { MoviesList } from "../movies-list/movies-list";
 
 
 
