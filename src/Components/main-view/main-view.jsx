@@ -164,6 +164,12 @@ return (
               )
             }
           />
+          <Route
+            path="/"
+            element={
+              <>{!user ? <Navigate to="/login" replace /> : <MoviesList />}</>
+            }
+          />
         </Routes>
       </Row>
     </BrowserRouter>
