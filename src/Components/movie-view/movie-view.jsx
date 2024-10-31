@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./movie-view.scss";
 export const MovieView = () => {
+  const movies = useSelector((state) => state.movies.list);
   const { movieId } = useParams();
 
   const movie = movies.find((m) => m._id === movieId);
