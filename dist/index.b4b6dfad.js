@@ -27296,7 +27296,8 @@ const MainView = ()=>{
     ]);
     const toggleFavorite = async (movieId)=>{
         if (!user) return;
-        const isFavorite = user.FavoriteMovies.includes(movieId);
+        const favoriteMovies = Array.isArray(user.FavoriteMovies) ? user.FavoriteMovies : [];
+        const isFavorite = favoriteMovies.includes(movieId);
         const method = isFavorite ? "DELETE" : "POST"; // DELETE to remove, POST to add
         try {
             const response = await fetch(`https://flixmovies-1ddcfb2fa4c5.herokuapp.com/users/${user.Username}/movies/${movieId}`, {
