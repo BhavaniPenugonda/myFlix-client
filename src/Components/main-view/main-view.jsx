@@ -29,7 +29,7 @@ export const MainView = () => {
 
   useEffect(() => {
     if (!token) return;
-    fetch("https://flixmovies-1ddcfb2fa4c5.herokuapp.com/movies", {
+    fetch(`https://flixmovies-1ddcfb2fa4c5.herokuapp.com/movies`, {
       headers: { Authorization: `Bearer ${token}` }, // Include the token in the request
     })
       
@@ -41,9 +41,9 @@ export const MainView = () => {
   }, [token]);
   
   const toggleFavorite = async (movieId) => {
-    if (!user) return;
-    const favoriteMovies = Array.isArray(user.FavoriteMovies) ? user.FavoriteMovies : [];
-    const isFavorite = favoriteMovies.includes(movieId);
+    
+    if (!user || !Array.isArray(user.FavoriteMovies)) return;
+    const isFavorite = user.FavoriteMovies.includes(movieId);
     const method = isFavorite ? "DELETE" : "POST"; // DELETE to remove, POST to add
 
     try {
