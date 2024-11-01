@@ -1,10 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
+const initialUserState = {
+  Username: "",
+  FavoriteMovies: [], // Ensure this is an array
+  
+};
+
 const userSlice = createSlice({
 name: "user",
 initialState: {user:null},
 reducers: {
-setUser: (state, action) => {
-state.user = action.payload
+setUser: (state= initialUserState, action) => {
+state.user = action.payload,
+action.payload.FavoriteMovies || []
 }
 }
 });
