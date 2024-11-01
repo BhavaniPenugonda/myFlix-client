@@ -44042,18 +44042,14 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "setUser", ()=>setUser);
 var _toolkit = require("@reduxjs/toolkit");
-const initialUserState = {
-    Username: "",
-    FavoriteMovies: []
-};
 const userSlice = (0, _toolkit.createSlice)({
     name: "user",
     initialState: {
         user: null
     },
     reducers: {
-        setUser: (state = initialUserState, action)=>{
-            state.user = action.payload, action.payload.FavoriteMovies;
+        setUser: (state, action)=>{
+            state.user = action.payload;
         }
     }
 });
