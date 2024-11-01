@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import {MovieView } from "../movie-view/movie-view";
-/*import { movies} from "../movie-data/movie-data"; */
+
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import Row from "react-bootstrap/Row";
@@ -158,7 +158,11 @@ return (
             path="/profile/:username"
             element={
               user ? (
-                <ProfileView token={token} setUser={setUser} movies={movies} />
+                <ProfileView 
+                user={user}
+                token={token}
+                setUser={(updatedUser) => dispatch(setUser(updatedUser))}
+                movies={movies} />
               ) : (
                 <Navigate to="/login" replace />
               )
