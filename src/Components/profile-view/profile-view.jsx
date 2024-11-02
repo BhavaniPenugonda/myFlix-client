@@ -84,7 +84,7 @@ export const ProfileView = ({ token, setUser, movies }) => {
 
   // Filter the user's favorite movies based on the movie IDs in user.FavoriteMovies
   const favoriteMovies = movies.filter((m) =>
-    user?.FavoriteMovies?.includes(m._id)
+    user?.favoriteMovies?.includes(m._id)
   );
 
   if (loading) return <p>Loading user information...</p>; // Show loading state
