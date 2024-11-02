@@ -46,8 +46,8 @@ export const MainView = () => {
   
   const toggleFavorite = async (movieId) => {
     console.log("Toggling favorite for movie ID:", movieId);
-    if (!user || !Array.isArray(user.FavoriteMovies)) return;
-    const isFavorite = user.FavoriteMovies.includes(movieId);
+    if (!user || !Array.isArray(user.favoriteMovies)) return;
+    const isFavorite = user.favoriteMovies.includes(movieId);
     const method = isFavorite ? "DELETE" : "POST"; // DELETE to remove, POST to add
 
     try {
@@ -139,7 +139,7 @@ return (
                 ) : (
                   <>
                     {movies.map((movie) => {
-                      const isFavorite = user?.FavoriteMovies?.includes(
+                      const isFavorite = user?.favoriteMovies?.includes(
                         movie._id
                       )  || false; // Check if the movie is a favorite
                       return(

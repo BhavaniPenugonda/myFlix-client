@@ -27300,8 +27300,8 @@ const MainView = ()=>{
     ]);
     const toggleFavorite = async (movieId)=>{
         console.log("Toggling favorite for movie ID:", movieId);
-        if (!user || !Array.isArray(user.FavoriteMovies)) return;
-        const isFavorite = user.FavoriteMovies.includes(movieId);
+        if (!user || !Array.isArray(user.favoriteMovies)) return;
+        const isFavorite = user.favoriteMovies.includes(movieId);
         const method = isFavorite ? "DELETE" : "POST"; // DELETE to remove, POST to add
         try {
             const response = await fetch(`https://flixmovies-1ddcfb2fa4c5.herokuapp.com/users/${user.Username}/movies/${movieId}`, {
@@ -27436,7 +27436,7 @@ const MainView = ()=>{
                                     columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                     children: movies.map((movie)=>{
-                                        const isFavorite = user?.FavoriteMovies?.includes(movie._id) || false; // Check if the movie is a favorite
+                                        const isFavorite = user?.favoriteMovies?.includes(movie._id) || false; // Check if the movie is a favorite
                                         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                             className: "mb-4",
                                             md: 3,
@@ -48127,7 +48127,7 @@ const ProfileView = ({ token, setUser, movies })=>{
         });
     };
     // Filter the user's favorite movies based on the movie IDs in user.FavoriteMovies
-    const favoriteMovies = movies.filter((m)=>user?.FavoriteMovies?.includes(m._id));
+    const favoriteMovies = movies.filter((m)=>user?.favoriteMovies?.includes(m._id));
     if (loading) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
         children: "Loading user information..."
     }, void 0, false, {
