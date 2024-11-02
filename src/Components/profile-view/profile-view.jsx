@@ -82,6 +82,26 @@ export const ProfileView = ({ token, setUser, movies }) => {
       });
   };
 
+  const handleDeregister = () => {
+   fetch( 'https://flixmovies-1ddcfb2fa4c5.herokuapp.com/users/${user.Username}', {
+      method: 'DELETE',
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    .then(response => {
+      if (response.ok) {
+        alert('User deleted');
+        localStorage.clear();
+        navigate('/login');
+      } else {
+        alert('Failed to delete user');
+      }
+    })
+    .catch(err => console.error('Error deleting user:', err));
+  };
+
+
+
+
   // Filter the user's favorite movies based on the movie IDs in user.FavoriteMovies
   const favoriteMovies = movies.filter((m) =>
     user?.favoriteMovies?.includes(m._id)
@@ -156,7 +176,11 @@ export const ProfileView = ({ token, setUser, movies }) => {
             Update Profile
           </Button>
         </Form>
+        <Button className="btn-danger mt-3" onClick={handleDeregister}>Delete Account</Button>
+
       </Col>
+    
+      
 
       <Col md={12} className="mt-4">
         <h3>Your Favorite Movies</h3>
