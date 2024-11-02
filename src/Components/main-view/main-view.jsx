@@ -13,7 +13,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { useSelector, useDispatch } from "react-redux";
 import { setMovies } from "../../redux/reducers/movies";
 import { MoviesList } from "../movies-list/movies-list";
-import { setUser } from "../../redux/reducers/user"; // Import the setUser action
+import { setUser } from "../../redux/reducers/user/user"; // Import the setUser action
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
