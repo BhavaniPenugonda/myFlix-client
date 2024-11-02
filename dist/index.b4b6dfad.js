@@ -27436,7 +27436,7 @@ const MainView = ()=>{
                                     columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                     children: movies.map((movie)=>{
-                                        const isFavorite = user?.FavoriteMovies?.includes(movie._id); // Check if the movie is a favorite
+                                        const isFavorite = user?.FavoriteMovies?.includes(movie._id) || false; // Check if the movie is a favorite
                                         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                             className: "mb-4",
                                             md: 3,

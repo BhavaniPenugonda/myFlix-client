@@ -141,7 +141,7 @@ return (
                     {movies.map((movie) => {
                       const isFavorite = user?.FavoriteMovies?.includes(
                         movie._id
-                      ); // Check if the movie is a favorite
+                      )  || false; // Check if the movie is a favorite
                       return(
                       <Col className="mb-4" key={movie._id} md={3}>
                         <MovieCard movie={movie}
