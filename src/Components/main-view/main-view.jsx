@@ -13,6 +13,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { useSelector, useDispatch } from "react-redux";
 import { setMovies } from "../../redux/reducers/movies";
 import { MoviesList } from "../movies-list/movies-list";
+import { setUser } from "../../redux/reducers/user"; // Import the setUser action
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -28,7 +29,10 @@ export const MainView = () => {
 
 
   useEffect(() => {
-    if (!token) return;
+    if (!token){
+      console.error("No token found.");
+  return;
+    } 
     fetch(`https://flixmovies-1ddcfb2fa4c5.herokuapp.com/movies`, {
       headers: { Authorization: `Bearer ${token}` }, // Include the token in the request
     })
@@ -41,7 +45,7 @@ export const MainView = () => {
   }, [token]);
   
   const toggleFavorite = async (movieId) => {
-    
+    console.log("Toggling favorite for movie ID:", movieId);
     if (!user || !Array.isArray(user.FavoriteMovies)) return;
     const isFavorite = user.FavoriteMovies.includes(movieId);
     const method = isFavorite ? "DELETE" : "POST"; // DELETE to remove, POST to add
@@ -142,7 +146,7 @@ return (
                       <Col className="mb-4" key={movie.id} md={3}>
                         <MovieCard movie={movie}
                        onMovieClick={() => setSelectedMovie(movie)}
-                       onFavoriteToggle={() => toggleFavorite(movie.id)}
+                       onFavoriteToggle={() => toggleFavorite(movie._id)}
                        isFavorite={isFavorite}  />
                       </Col>
                       );
