@@ -25,7 +25,20 @@ export const MainView = () => {
   const movies = useSelector((state) => state.movies.list);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    const storedToken = localStorage.getItem("token");
+    
+    if (storedUser && storedToken) {
+      try {
+        const parsedUser = JSON.parse(storedUser);
+        dispatch(setUser(parsedUser));
+      } catch (error) {
+        console.error("Failed to parse user from localStorage:", error);
+      }
+    }
+  }, [dispatch]);
 
 
   useEffect(() => {
@@ -46,8 +59,9 @@ export const MainView = () => {
   
   const toggleFavorite = async (movieId) => {
     console.log("Toggling favorite for movie ID:", movieId);
-    if (!user || !Array.isArray(user.favoriteMovies)) return;
-    const isFavorite = user.favoriteMovies.includes(movieId);
+    if (!user || !Array.isArray(user.FavoriteMovies)) return;
+    const isFavorite = user.FavoriteMovies.includes(movieId);
+    console.log(isFavorite)
     const method = isFavorite ? "DELETE" : "POST"; // DELETE to remove, POST to add
 
     try {
@@ -65,6 +79,7 @@ export const MainView = () => {
       if (!response.ok) {
         throw new Error("Failed to update favorite movies.");
       }
+      alert(isFavorite ? 'Movie removed from favorites successfully' : 'Movie added to favorites successfully')
 
       const updatedUser = await response.json();
       dispatch(setUser(updatedUser));
@@ -139,7 +154,7 @@ return (
                 ) : (
                   <>
                     {movies.map((movie) => {
-                      const isFavorite = user?.favoriteMovies?.includes(
+                      const isFavorite = user?.FavoriteMovies?.includes(
                         movie._id
                       )  || false; // Check if the movie is a favorite
                       return(
