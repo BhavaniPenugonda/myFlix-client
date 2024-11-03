@@ -27629,12 +27629,12 @@ MovieCard.propTypes = {
     movie: (0, _propTypesDefault.default).shape({
         Title: (0, _propTypesDefault.default).string,
         Description: (0, _propTypesDefault.default).string,
-        Genre: (0, _propTypesDefault.default).string,
-        Director: (0, _propTypesDefault.default).string,
+        Genre: (0, _propTypesDefault.default).object,
+        Director: (0, _propTypesDefault.default).object,
         ImagePath: (0, _propTypesDefault.default).string,
         _id: (0, _propTypesDefault.default).string.isRequired
     }).isRequired,
-    onMovieClick: (0, _propTypesDefault.default).func.isRequired,
+    onMovieClick: (0, _propTypesDefault.default).func,
     onFavoriteToggle: (0, _propTypesDefault.default).func.isRequired,
     isFavorite: (0, _propTypesDefault.default).bool.isRequired
 };
@@ -43942,7 +43942,7 @@ const LoginView = ({ onLoggedIn })=>{
             Username: username,
             Password: password
         };
-        fetch("https://flixmovies-1ddcfb2fa4c5.herokuapp.com/login", {
+        fetch(`https://flixmovies-1ddcfb2fa4c5.herokuapp.com/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
