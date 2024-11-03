@@ -50,7 +50,7 @@ export const ProfileView = ({ token, setUser, movies }) => {
     e.preventDefault();
     // API request to update user profile
     fetch(
-      'https://flixmovies-1ddcfb2fa4c5.herokuapp.com/users/${user.Username}',
+      `https://flixmovies-1ddcfb2fa4c5.herokuapp.com/users/${user.Username}`,
       {
         method: "PUT",
         headers: {
@@ -83,7 +83,7 @@ export const ProfileView = ({ token, setUser, movies }) => {
   };
 
   const handleDeregister = () => {
-   fetch( 'https://flixmovies-1ddcfb2fa4c5.herokuapp.com/users/${user.Username}', {
+   fetch( `https://flixmovies-1ddcfb2fa4c5.herokuapp.com/users/${user.Username}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -104,7 +104,7 @@ export const ProfileView = ({ token, setUser, movies }) => {
 
   // Filter the user's favorite movies based on the movie IDs in user.FavoriteMovies
   const favoriteMovies = movies.filter((m) =>
-    user?.favoriteMovies?.includes(m._id)
+    user?.FavoriteMovies?.includes(m._id)
   );
 
   if (loading) return <p>Loading user information...</p>; // Show loading state
@@ -190,7 +190,7 @@ export const ProfileView = ({ token, setUser, movies }) => {
           <Row>
             {favoriteMovies.map((movie) => (
               <Col key={movie._id} md={4}>
-                <MovieCard movie={movie} />
+                <MovieCard movie={movie}  isFavorite={true}/>
               </Col>
             ))}
           </Row>
