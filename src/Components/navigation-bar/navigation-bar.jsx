@@ -32,10 +32,14 @@ export const NavigationBar = () => {
                 <Nav.Link as={Link} to="/">
                   Home
                 </Nav.Link>
-                <Nav.Link as={Link} to={"/profile/${user.Username}"}>
+                <Nav.Link as={Link} to={`/profile/${user.Username}`}>
                   Profile
                 </Nav.Link>
-                <Nav.Link onClick={() => dispatch(setUser(null))}>Logout</Nav.Link>
+                <Nav.Link onClick={() =>{
+                   dispatch(setUser(null));
+                   localStorage.removeItem("token");
+                }}
+                >Logout</Nav.Link>
               </>
             )}
           </Nav>
