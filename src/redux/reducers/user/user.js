@@ -6,9 +6,9 @@ name: "user",
 initialState: null,
 reducers: {
 setUser: (state, action) => {
-state.user = action.payload
+ return action.payload;
 },
-logoutUser:(state)=>{
+logoutUser:()=>{
   return null;
 },
 }
