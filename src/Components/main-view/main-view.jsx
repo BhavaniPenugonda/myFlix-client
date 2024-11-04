@@ -60,7 +60,7 @@ export const MainView = () => {
   const toggleFavorite = async (movieId) => {
     console.log("Toggling favorite for movie ID:", movieId);
     if (!user || !Array.isArray(user.FavoriteMovies)) 
-      debugger;
+      
       return;
     const isFavorite = user.FavoriteMovies.includes(movieId);
     console.log(isFavorite)
