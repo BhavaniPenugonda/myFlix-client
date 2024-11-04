@@ -59,7 +59,9 @@ export const MainView = () => {
   
   const toggleFavorite = async (movieId) => {
     console.log("Toggling favorite for movie ID:", movieId);
-    if (!user || !Array.isArray(user.FavoriteMovies)) return;
+    if (!user || !Array.isArray(user.FavoriteMovies)) 
+      debugger;
+      return;
     const isFavorite = user.FavoriteMovies.includes(movieId);
     console.log(isFavorite)
     const method = isFavorite ? "DELETE" : "POST"; // DELETE to remove, POST to add
