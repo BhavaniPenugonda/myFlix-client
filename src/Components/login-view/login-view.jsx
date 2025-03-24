@@ -11,7 +11,8 @@ export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch(); // Define the dispatch function
-
+  // const backend_api = 'https://flixmovies-1ddcfb2fa4c5.herokuapp.com' // this is the url for the backend deploy on heroku
+  const backend_api = 'http://3.124.12.171' // this is the url/ip address for the backend deploy on aws instance
 
   const handleSubmit = (event) => {
     // this prevents the default behavior of the form which is to reload the entire page
@@ -21,8 +22,8 @@ export const LoginView = ({ onLoggedIn }) => {
       Username: username,
       Password: password,
     };
-
-    fetch(`https://flixmovies-1ddcfb2fa4c5.herokuapp.com/login`, {
+    console.log(data);
+    fetch(`${backend_api}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

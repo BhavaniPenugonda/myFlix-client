@@ -12,7 +12,8 @@ export const ProfileView = ({ token, setUser, movies }) => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
-
+  // const backend_api = 'https://flixmovies-1ddcfb2fa4c5.herokuapp.com' // this is the url for the backend deploy on heroku
+  const backend_api = 'http://3.124.12.171' // this is the url/ip address for the backend deploy on aws instance
   
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user")); // Ensure user is retrieved
@@ -22,7 +23,7 @@ export const ProfileView = ({ token, setUser, movies }) => {
       return;
     }
     fetch(
-      `https://flixmovies-1ddcfb2fa4c5.herokuapp.com/users/${storedUser.Username}`,
+      `${backend_api}/users/${storedUser.Username}`,
       {
         headers: { Authorization: `Bearer ${token}` }, 
       }
@@ -50,7 +51,7 @@ export const ProfileView = ({ token, setUser, movies }) => {
     e.preventDefault();
     // API request to update user profile
     fetch(
-      `https://flixmovies-1ddcfb2fa4c5.herokuapp.com/users/${user.Username}`,
+      `${backend_api}/users/${user.Username}`,
       {
         method: "PUT",
         headers: {
@@ -83,7 +84,7 @@ export const ProfileView = ({ token, setUser, movies }) => {
   };
 
   const handleDeregister = () => {
-   fetch( `https://flixmovies-1ddcfb2fa4c5.herokuapp.com/users/${user.Username}`, {
+   fetch(`${backend_api}/users/${user.Username}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` },
     })

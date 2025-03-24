@@ -25,6 +25,8 @@ export const MainView = () => {
   const movies = useSelector((state) => state.movies.list);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
+  // const backend_api = 'https://flixmovies-1ddcfb2fa4c5.herokuapp.com' // this is the url for the backend deploy on heroku
+  const backend_api = 'http://3.124.12.171' // this is the url/ip address for the backend deploy on aws instance
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -46,7 +48,7 @@ export const MainView = () => {
       console.error("No token found.");
   return;
     } 
-    fetch(`https://flixmovies-1ddcfb2fa4c5.herokuapp.com/movies`, {
+    fetch(`${backend_api}/movies`, {
       headers: { Authorization: `Bearer ${token}` }, // Include the token in the request
     })
       
@@ -67,7 +69,7 @@ export const MainView = () => {
 
     try {
       const response = await fetch(
-        `https://flixmovies-1ddcfb2fa4c5.herokuapp.com/users/${user.Username}/movies/${movieId}`,
+        `${backend_api}/users/${user.Username}/movies/${movieId}`,
         {
           method: method,
           headers: {
