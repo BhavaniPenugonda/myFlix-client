@@ -1,14 +1,13 @@
 import{ useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { backend_api } from "../../constants"; // import backend api url from constants
 
 export const SignupView = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
-  // const backend_api = 'https://flixmovies-1ddcfb2fa4c5.herokuapp.com' // this is the url for the backend deploy on heroku
-  const backend_api = 'http://3.124.12.171' // this is the url/ip address for the backend deploy on aws instance
 
   const handleSubmit = (event) => {
     event.preventDefault();

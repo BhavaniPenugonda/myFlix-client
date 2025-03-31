@@ -14,6 +14,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setMovies } from "../../redux/reducers/movies";
 import { MoviesList } from "../movies-list/movies-list";
 import { setUser } from "../../redux/reducers/user/user"; // Import the setUser action
+import { backend_api } from "../../constants"; // import backend api url from constants
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -25,8 +26,6 @@ export const MainView = () => {
   const movies = useSelector((state) => state.movies.list);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  // const backend_api = 'https://flixmovies-1ddcfb2fa4c5.herokuapp.com' // this is the url for the backend deploy on heroku
-  const backend_api = 'http://3.124.12.171' // this is the url/ip address for the backend deploy on aws instance
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");

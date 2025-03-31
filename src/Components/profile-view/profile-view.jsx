@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row, Form, Button, Card } from "react-bootstrap";
 import { MovieCard } from "../movie-card/movie-card"; 
+import { backend_api } from "../../constants"; // import backend api url from constants
 
 export const ProfileView = ({ token, setUser, movies }) => {
   const [user, setUserState] = useState(null); 
@@ -12,8 +13,6 @@ export const ProfileView = ({ token, setUser, movies }) => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
-  // const backend_api = 'https://flixmovies-1ddcfb2fa4c5.herokuapp.com' // this is the url for the backend deploy on heroku
-  const backend_api = 'http://3.124.12.171' // this is the url/ip address for the backend deploy on aws instance
   
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user")); // Ensure user is retrieved
