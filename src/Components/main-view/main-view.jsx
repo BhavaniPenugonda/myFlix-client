@@ -15,6 +15,7 @@ import { setMovies } from "../../redux/reducers/movies";
 import { MoviesList } from "../movies-list/movies-list";
 import { setUser } from "../../redux/reducers/user/user"; // Import the setUser action
 import { backend_api } from "../../constants"; // import backend api url from constants
+import ImageGallery from "../image-gallery/image-gallery"; 
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -193,6 +194,20 @@ return (
               <>{!user ? <Navigate to="/login" replace /> : <MoviesList />}</>
             }
           />
+          <Route
+            path="/gallery"
+            element={
+              <>
+                {!user ? (
+                  <Navigate to="/login" replace />
+                ) : (
+                  <Col md={8}>
+                    <ImageGallery />
+                  </Col>
+                )}
+              </>
+            }
+            />
         </Routes>
       </Row>
     </BrowserRouter>
