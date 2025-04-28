@@ -48727,7 +48727,7 @@ const ImageGallery = ()=>{
                 children: "\uD83D\uDCF8 Image Gallery"
             }, void 0, false, {
                 fileName: "src/Components/image-gallery/image-gallery.jsx",
-                lineNumber: 56,
+                lineNumber: 55,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -48738,7 +48738,7 @@ const ImageGallery = ()=>{
                         onChange: handleFileChange
                     }, void 0, false, {
                         fileName: "src/Components/image-gallery/image-gallery.jsx",
-                        lineNumber: 58,
+                        lineNumber: 57,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -48746,13 +48746,13 @@ const ImageGallery = ()=>{
                         children: "Upload"
                     }, void 0, false, {
                         fileName: "src/Components/image-gallery/image-gallery.jsx",
-                        lineNumber: 59,
+                        lineNumber: 58,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Components/image-gallery/image-gallery.jsx",
-                lineNumber: 57,
+                lineNumber: 56,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -48770,20 +48770,20 @@ const ImageGallery = ()=>{
                                             alt: "Resized"
                                         }, void 0, false, {
                                             fileName: "src/Components/image-gallery/image-gallery.jsx",
-                                            lineNumber: 66,
+                                            lineNumber: 65,
                                             columnNumber: 16
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                             children: "Resized Image"
                                         }, void 0, false, {
                                             fileName: "src/Components/image-gallery/image-gallery.jsx",
-                                            lineNumber: 67,
+                                            lineNumber: 66,
                                             columnNumber: 16
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Components/image-gallery/image-gallery.jsx",
-                                    lineNumber: 65,
+                                    lineNumber: 64,
                                     columnNumber: 16
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -48794,42 +48794,42 @@ const ImageGallery = ()=>{
                                             alt: "Original"
                                         }, void 0, false, {
                                             fileName: "src/Components/image-gallery/image-gallery.jsx",
-                                            lineNumber: 70,
+                                            lineNumber: 69,
                                             columnNumber: 16
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                             children: "Original Image"
                                         }, void 0, false, {
                                             fileName: "src/Components/image-gallery/image-gallery.jsx",
-                                            lineNumber: 71,
+                                            lineNumber: 70,
                                             columnNumber: 16
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Components/image-gallery/image-gallery.jsx",
-                                    lineNumber: 69,
+                                    lineNumber: 68,
                                     columnNumber: 16
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/Components/image-gallery/image-gallery.jsx",
-                            lineNumber: 64,
+                            lineNumber: 63,
                             columnNumber: 13
                         }, undefined)
                     }, index, false, {
                         fileName: "src/Components/image-gallery/image-gallery.jsx",
-                        lineNumber: 63,
+                        lineNumber: 62,
                         columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/Components/image-gallery/image-gallery.jsx",
-                lineNumber: 61,
+                lineNumber: 60,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Components/image-gallery/image-gallery.jsx",
-        lineNumber: 55,
+        lineNumber: 54,
         columnNumber: 5
     }, undefined);
 };

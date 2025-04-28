@@ -50,7 +50,6 @@ const ImageGallery = () => {
   };
   const imageKey = images.filter ((item) => !item.includes('resized'));
   
-
   return (
     <div className="gallery-container">
       <h2>📸 Image Gallery</h2>
