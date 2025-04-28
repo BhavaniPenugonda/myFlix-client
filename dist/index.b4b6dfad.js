@@ -47788,7 +47788,9 @@ exports.default = thunk;
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "backend_api", ()=>backend_api);
+parcelHelpers.export(exports, "bucket_url", ()=>bucket_url);
 const backend_api = "http://bhavani-vpv-load-balancer-1754539924.eu-central-1.elb.amazonaws.com";
+const bucket_url = "https://s3.eu-central-1.amazonaws.com/lambdafunction-task2.5";
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bzDnl":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67db = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
@@ -48717,6 +48719,7 @@ const ImageGallery = ()=>{
             setImages(data.map((item)=>item.Key));
         }).catch((err)=>console.error("Error fetching images:", err));
     };
+    const imageKey = images.filter((item)=>!item.includes("resized"));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "gallery-container",
         children: [
@@ -48724,7 +48727,7 @@ const ImageGallery = ()=>{
                 children: "\uD83D\uDCF8 Image Gallery"
             }, void 0, false, {
                 fileName: "src/Components/image-gallery/image-gallery.jsx",
-                lineNumber: 54,
+                lineNumber: 56,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -48735,7 +48738,7 @@ const ImageGallery = ()=>{
                         onChange: handleFileChange
                     }, void 0, false, {
                         fileName: "src/Components/image-gallery/image-gallery.jsx",
-                        lineNumber: 56,
+                        lineNumber: 58,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -48743,18 +48746,18 @@ const ImageGallery = ()=>{
                         children: "Upload"
                     }, void 0, false, {
                         fileName: "src/Components/image-gallery/image-gallery.jsx",
-                        lineNumber: 57,
+                        lineNumber: 59,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Components/image-gallery/image-gallery.jsx",
-                lineNumber: 55,
+                lineNumber: 57,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "gallery",
-                children: images.map((img, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: imageKey.map((img, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "image-card",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "image-wrapper",
@@ -48763,70 +48766,70 @@ const ImageGallery = ()=>{
                                     className: "image-item",
                                     children: [
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                            src: `${(0, _constants.backend_api)}/download/resized/${img}`,
+                                            src: `${(0, _constants.bucket_url)}/resized/${img}`,
                                             alt: "Resized"
                                         }, void 0, false, {
                                             fileName: "src/Components/image-gallery/image-gallery.jsx",
-                                            lineNumber: 64,
+                                            lineNumber: 66,
                                             columnNumber: 16
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                             children: "Resized Image"
                                         }, void 0, false, {
                                             fileName: "src/Components/image-gallery/image-gallery.jsx",
-                                            lineNumber: 65,
+                                            lineNumber: 67,
                                             columnNumber: 16
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Components/image-gallery/image-gallery.jsx",
-                                    lineNumber: 63,
+                                    lineNumber: 65,
                                     columnNumber: 16
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: "image-item",
                                     children: [
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                            src: `${(0, _constants.backend_api)}/download/${img}`,
+                                            src: `${(0, _constants.bucket_url)}/${img}`,
                                             alt: "Original"
                                         }, void 0, false, {
                                             fileName: "src/Components/image-gallery/image-gallery.jsx",
-                                            lineNumber: 68,
+                                            lineNumber: 70,
                                             columnNumber: 16
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                             children: "Original Image"
                                         }, void 0, false, {
                                             fileName: "src/Components/image-gallery/image-gallery.jsx",
-                                            lineNumber: 69,
+                                            lineNumber: 71,
                                             columnNumber: 16
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Components/image-gallery/image-gallery.jsx",
-                                    lineNumber: 67,
+                                    lineNumber: 69,
                                     columnNumber: 16
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/Components/image-gallery/image-gallery.jsx",
-                            lineNumber: 62,
+                            lineNumber: 64,
                             columnNumber: 13
                         }, undefined)
                     }, index, false, {
                         fileName: "src/Components/image-gallery/image-gallery.jsx",
-                        lineNumber: 61,
+                        lineNumber: 63,
                         columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/Components/image-gallery/image-gallery.jsx",
-                lineNumber: 59,
+                lineNumber: 61,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Components/image-gallery/image-gallery.jsx",
-        lineNumber: 53,
+        lineNumber: 55,
         columnNumber: 5
     }, undefined);
 };

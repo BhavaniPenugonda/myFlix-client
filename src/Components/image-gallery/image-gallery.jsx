@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './image-gallery.scss';
-import { backend_api } from "../../constants"; 
+import { backend_api, bucket_url } from "../../constants"; 
 
 //const API_URL = 'backend_api';
 
@@ -48,6 +48,8 @@ const ImageGallery = () => {
       })
       .catch((err) => console.error('Error fetching images:', err));
   };
+  const imageKey = images.filter ((item) => !item.includes('resized'));
+  
 
   return (
     <div className="gallery-container">
@@ -57,15 +59,15 @@ const ImageGallery = () => {
         <button onClick={uploadImage}>Upload</button>
       </div>
       <div className="gallery">
-        {images.map((img, index) => (
+        {imageKey.map((img, index) => (
           <div className="image-card" key={index}>
             <div className="image-wrapper">
                <div className="image-item">
-               <img src={`${backend_api}/download/resized/${img}`} alt="Resized" />
+               <img src={`${bucket_url}/resized/${img}`} alt="Resized" />
                <p>Resized Image</p>
                </div>
                <div className="image-item">
-               <img src={`${backend_api}/download/${img}`} alt="Original" />
+               <img src={`${bucket_url}/${img}`} alt="Original" />
                <p>Original Image</p>
                </div>
             </div>
