@@ -73,12 +73,10 @@ cd myFlix-client
 
 npm install
 
+ 
+ Deployed Link:
 
+https://bhavani-flixmovies.netlify.app
 
-
-
-
-
-Link:
-
-https://bhavani-flixmovies.netlify.app/
+Usename : demouser
+Password : demopassword
