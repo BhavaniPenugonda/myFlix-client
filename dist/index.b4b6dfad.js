@@ -47782,14 +47782,12 @@ thunk.withExtraArgument = createThunkMiddleware;
 exports.default = thunk;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3huJa":[function(require,module,exports) {
-// export const backend_api = 'https://flixmovies-1ddcfb2fa4c5.herokuapp.com' // this is the url for the backend deploy on heroku
-//export const backend_api = 'http://3.124.12.171' // this is the url/ip address for the backend deploy on aws instance
-// export const backend_api = 'http://localhost:8080' // backend api running on your local host
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "backend_api", ()=>backend_api);
 parcelHelpers.export(exports, "bucket_url", ()=>bucket_url);
-const backend_api = "http://bhavani-vpv-load-balancer-1754539924.eu-central-1.elb.amazonaws.com";
+const backend_api = "https://flixmovies-1ddcfb2fa4c5.herokuapp.com" // this is the url for the backend deploy on heroku
+;
 const bucket_url = "https://s3.eu-central-1.amazonaws.com/lambdafunction-task2.5";
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bzDnl":[function(require,module,exports) {
